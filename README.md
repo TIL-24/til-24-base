@@ -10,10 +10,9 @@
 
 Fork this repository on GitHub, and then clone your fork into the `$HOME` directory (should be `/home/jupyter`) of your GCP Vertex AI Workbench instance. Note that to clone your repository on the instance, you will likely need to [create a GitHub Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
 
-Then from your instance, run the following command, replacing `TEAM-NAME` with your team name and `TRACK` with your track, either `novice` or `advanced`.
+Then from your instance, run the following command from the root of your cloned repository (e.g. `cd til-24-base`), replacing `TEAM-NAME` with your team name and `TRACK` with your track, either `novice` or `advanced`.
 
 ```bash
-cd $HOME
 bash init.bash TEAM-NAME TRACK
 ```
 
