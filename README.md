@@ -10,7 +10,7 @@
 
 Fork this repository on GitHub, and then clone your fork into the `$HOME` directory (should be `/home/jupyter`) of your GCP Vertex AI Workbench instance. Note that to clone your repository on the instance, you will likely need to [create a GitHub Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
 
-Then from your instance, run the following command from the root of your cloned repository (e.g. `cd til-24-base`), replacing `TEAM-NAME` with your team name and `TRACK` with your track, either `novice` or `advanced`.
+Then from your instance, run the following command from the root of your cloned repository (e.g. `cd til-24-base`), replacing `TEAM-NAME` with your team name and `TRACK` with your track, either `novice` or `advanced`. Note that your team name should be converted to all lowercase, with spaces replaced with `-` (i.e. same as your team channel's name on Discord). For example, team `Yes But No` becomes `yes-but-no`. Note that for team `NubbiesDubbiesWubbiesTubbies`, your team name is too long, please put down `nubbiesdubbieswubbiestubbie` instead.
 
 ```bash
 bash init.bash TEAM-NAME TRACK
@@ -201,6 +201,8 @@ sudo apt-get update
 sudo apt-get -y install cuda-toolkit-12-4
 sudo apt-get install -y cuda-drivers
 ```
+
+At the last step (re-installing CUDA drivers), select "yes" for both prompts.
 
 See also:
 

@@ -42,4 +42,4 @@ gcloud config set artifacts/repository repository-$1
 pip install -r requirements.txt
 
 # create .env
-echo "TEAM_NAME=$1\nTEAM_TRACK=$2" > .env
+echo -e "TEAM_NAME=$1\nTEAM_TRACK=$2" > .env
