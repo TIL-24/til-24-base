@@ -48,7 +48,7 @@ The online development environment gives each team access to a Linux virtual mac
 In the Semi-Finals and Finals, teams will have access to a Linux machine with the following:
 
 - Intel Core i7-14700K
-- 16 GB RAM
+- 32 GB RAM
 - Nvidia RTX 4070 Ti Super (16 GB VRAM)
 - 1 TB Disk space
 - Ubuntu 20.04
