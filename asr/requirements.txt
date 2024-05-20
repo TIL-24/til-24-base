@@ -1,13 +1,8 @@
-pandas==2.0.3
-accelerate
-torch==2.0.1
-transformers==4.31.0
 librosa==0.10.1
-datasets==2.11.0
-pydub==0.25.1
-fastapi==0.95.0
+fastapi
+accelerate
 uvicorn[standard]
-torchaudio==2.0.1
-noisereduce==2.0.0
-numpy==1.24.0
-
+pandas==2.0.3
+torch @ https://download.pytorch.org/whl/cu121/torch-2.2.1%2Bcu121-cp310-cp310-linux_x86_64.whl#sha256=1adf430f01ff649c848ac021785e18007b0714fdde68e4e65bd0c640bf3fb8e1
+torchaudio @ https://download.pytorch.org/whl/cu121/torchaudio-2.2.1%2Bcu121-cp310-cp310-linux_x86_64.whl#sha256=23f6236429e2bf676b820e8e7221a1d58aaf908bff2ba2665aa852df71a97961
+transformers==4.40.2
