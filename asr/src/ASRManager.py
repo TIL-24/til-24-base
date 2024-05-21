@@ -6,17 +6,13 @@ import io
 class ASRManager:
     def __init__(self):
         self.model_name = "facebook/wav2vec2-large-960h"
-        #self.processor = "test"
-        #self.model = "test"
         self.processor = Wav2Vec2Processor.from_pretrained(self.model_name)
         self.model = Wav2Vec2ForCTC.from_pretrained(self.model_name)
 
     def transcribe(self, audio_bytes: bytes) -> str:
         audio_tensor, sampling_rate = torchaudio.load(io.BytesIO(audio_bytes))
         
-        # Ensure the sampling rate is what the model expects
         if sampling_rate != 16000:
-            # Resample the audio to 16000 Hz if necessary
             resampler = torchaudio.transforms.Resample(sampling_rate, 16000)
             audio_tensor = resampler(audio_tensor)
             sampling_rate = 16000
@@ -30,4 +26,4 @@ class ASRManager:
         predicted_ids = torch.argmax(logits, dim=-1)
         transcription = self.processor.batch_decode(predicted_ids)
 
-        return transcription[0]  # Return the first element as
+        return transcription[0]  # Return the first element of the batch
