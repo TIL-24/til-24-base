@@ -17,17 +17,22 @@ TEAM_TRACK = os.getenv("TEAM_TRACK")
 
 def main():
     # input_dir = Path(f"/home/jupyter/{TEAM_TRACK}")
-    input_dir = Path(f"../../data/{TEAM_TRACK}/train")
+    input_dir = Path(f"../{TEAM_TRACK}")
     # results_dir = Path(f"/home/jupyter/{TEAM_NAME}")
     results_dir = Path("results")
     results_dir.mkdir(parents=True, exist_ok=True)
     instances = []
-
+    count = 0
     with open(input_dir / "asr.jsonl", "r") as f:
         for line in f:
             if line.strip() == "":
                 continue
+            if(count > 200): 
+                break
+                
+            count += 1
             instance = json.loads(line.strip())
+            print(instance)
             with open(input_dir / "audio" / instance["audio"], "rb") as file:
                 audio_bytes = file.read()
                 instances.append(
