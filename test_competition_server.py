@@ -138,7 +138,7 @@ async def team_endpoint(websocket: WebSocket, team_name: str):
     try:
         responses: List[Dict[str, Any]] = []
         for case in testcases:
-            with open(case["audio"], "rb") as file:
+            with open("simulator/data/audio" + case["audio"], "rb") as file:
                 audio_bytes = file.read()
             # determine time between start and end
             start_time = time()
