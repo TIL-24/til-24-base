@@ -158,6 +158,21 @@ To install it, see the [installation docs provided by GCP](https://cloud.google.
 
 Then, run `gcloud init`, which should open a browser window for you to grant permissions for your user account. If prompted for your project id, input `dsta-angelhack`. If prompted for your region, input `asia-southeast1`. If prompted for your zone, input the zone corresponding to the zone of your team's instance (should be of the form `asia-southeast1-x` where x is any of `a`, `b`, or `c`).
 
+Then run the following, ensuring to replace `TEAM-NAME` with your team name.
+
+```bash
+gcloud auth configure-docker asia-southeast1-docker.pkg.dev -q
+gcloud config set artifacts/location asia-southeast1
+gcloud config set artifacts/repository repository-TEAM-NAME
+```
+
+You should then be able to push to your team's Artifact Registry repository same as during qualifiers:
+
+```bash
+docker tag TEAM-NAME-asr asia-southeast1-docker.pkg.dev/dsta-angelhack/repository-TEAM-NAME/TEAM-NAME-asr:finals
+docker push asia-southeast1-docker.pkg.dev/dsta-angelhack/repository-TEAM-NAME/TEAM-NAME-asr:finals
+```
+
 ## Known Issues
 
 ### Robomaster SDK
