@@ -250,7 +250,9 @@ function render() {
 
 function initWebsocket() {
   // Create WebSocket connection.
-  const socket = new WebSocket("ws://localhost:8000/ws_sim");
+  var url = new URL('/ws_sim', window.location.href)
+  url.protocol = url.protocol.replace('http', 'ws')
+  const socket = new WebSocket(url.href);
 
   // Connection opened
   socket.addEventListener("open", (event) => {
