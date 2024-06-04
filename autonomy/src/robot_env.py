@@ -60,7 +60,7 @@ class RobotEnv(Environment):
         await RobotEnv.wait_for_action(self.robot.gimbal.move(yaw=change))
 
     async def reset_pan_cannon(self) -> None:
-        await RobotEnv.wait_for_action(self.robot.gimbal.moveto(yaw=0))
+        await RobotEnv.wait_for_action(self.robot.gimbal.moveto(yaw=0,pitch=15))
 
     async def exit(self) -> None:
         """
