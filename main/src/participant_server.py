@@ -38,7 +38,7 @@ async def server():
                         print("done!")
                         break
                     else:
-                        await manager.send_result({"health": "ok"})
+                        await manager.send_result(websocket, {"health": "ok"})
                         continue
                 print(f"run {index}")
                 # ASR

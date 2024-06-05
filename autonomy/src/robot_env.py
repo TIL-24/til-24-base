@@ -35,7 +35,7 @@ class RobotEnv(Environment):
         def sub_data_handler(angle_info):
             _, self.camera_yaw, _, _ = angle_info
 
-            print(f"yaw: {self.camera_yaw}")
+            # print(f"yaw: {self.camera_yaw}")
             # responsible for updating the server
             self.loop.create_task(
                 self.send_websocket(
